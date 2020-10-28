@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.itheima.mapper.StudentMapper">
+    <!--根据客户编号获取客户信息 -->
+	<select id="findStudentById" parameterType="Integer"
+		resultType="com.itheima.po.Student">
+		select * from student where id = #{id}
+		
+	</select>
+	<insert id="addStudent" parameterType="com.itheima.po.Student">
+	    insert into student(username,balance)
+	    values(#{username},#{balance})
+	</insert>
+	
+</mapper>
